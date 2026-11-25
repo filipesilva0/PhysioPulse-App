@@ -1,0 +1,15 @@
+PhysioPulse — app do iPhone (equipa)
+
+Num Mac com o Xcode instalado:
+1. Descomprima esta pasta.
+2. Abra o Terminal, arraste esta pasta para lá depois de escrever "cd " e prima Enter.
+3. Escreva:  sh iphone.sh   e prima Enter.
+   (Instala o Rust se faltar, os pacotes, cria o projeto Xcode e abre o Xcode.)
+4. No Xcode: Signing & Capabilities › Team = o seu Apple ID; ligue o iPhone, escolha-o em cima e carregue em ▶.
+5. No iPhone: Definições › Geral › VPN e gestão de dispositivos › confiar no seu Apple ID.
+   Se pedir, ligue o Modo de programador (Definições › Privacidade e segurança) e reinicie.
+6. Abra o PhysioPulse: servidor physiopulse-clinica.duckdns.org (ou 192.168.1.64:8095 na rede da clínica),
+   entre com palavra-passe e código, e aprove o iPhone no computador (Hoje ou Definições › Dispositivos).
+
+Conta Apple gratuita: a app deixa de abrir ao fim de 7 dias — ligue o iPhone e carregue em ▶ outra vez.
+Mais detalhes: claude/DEVELOPMENT.md › iPhone app.

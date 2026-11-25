@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T22:16:15+00:00",
+  "title": "Design System: PhysioPulse website",
+  "extensions": {
+    "colorMeta": {
+      "card-stock": {
+        "role": "primary",
+        "displayName": "Card Stock Teal",
+        "canonical": "oklch(52.2% 0.090 184.7)",
+        "tonalRamp": [
+          "#00100D",
+          "#002D28",
+          "#024D46",
+          "#137067",
+          "#3F9288",
+          "#74B3AA",
+          "#A5D4CD",
+          "#D6F6F1"
+        ]
+      },
+      "card-stock-deep": {
+        "role": "primary",
+        "displayName": "Deep Stock",
+        "canonical": "oklch(42.2% 0.072 185.5)",
+        "tonalRamp": [
+          "#000F0D",
+          "#082B28",
+          "#1B4B46",
+          "#2F6D66",
+          "#518F88",
+          "#7FB0AA",
+          "#ADD2CD",
+          "#DBF5F1"
+        ]
+      },
+      "teal-ink": {
+        "role": "primary",
+        "displayName": "Teal Ink",
+        "canonical": "oklch(45.7% 0.078 185.3)",
+        "tonalRamp": [
+          "#000F0D",
+          "#042C28",
+          "#144C46",
+          "#276E67",
+          "#4C9088",
+          "#7CB1AA",
+          "#AAD3CD",
+          "#DAF5F1"
+        ]
+      },
+      "date-stamp-violet": {
+        "role": "secondary",
+        "displayName": "Date-Stamp Violet",
+        "canonical": "oklch(42.9% 0.172 284.1)",
+        "tonalRamp": [
+          "#0A0525",
+          "#221A51",
+          "#3D3381",
+          "#5A4EB5",
+          "#7971DC",
+          "#9C99F1",
+          "#C1C1FF",
+          "#E8E9FF"
+        ]
+      },
+      "brand-paper": {
+        "role": "neutral",
+        "displayName": "Brand Paper",
+        "canonical": "oklch(95.8% 0.007 88.6)",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#262523",
+          "#43423F",
+          "#63615D",
+          "#84827E",
+          "#A6A5A1",
+          "#CAC9C6",
+          "#EFEEEC"
+        ]
+      },
+      "inner-paper": {
+        "role": "neutral",
+        "displayName": "Inner Paper",
+        "canonical": "oklch(98.2% 0.004 91.4)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#252524",
+          "#424240",
+          "#62615F",
+          "#838280",
+          "#A6A5A3",
+          "#C9C9C7",
+          "#EFEEED"
+        ]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "on-stock": {
+        "role": "neutral",
+        "displayName": "Paper on Stock",
+        "canonical": "oklch(95.8% 0.007 88.6)",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#262523",
+          "#43423F",
+          "#63615D",
+          "#84827E",
+          "#A6A5A1",
+          "#CAC9C6",
+          "#EFEEEC"
+        ]
+      },
+      "on-stock-muted": {
+        "role": "neutral",
+        "displayName": "Stock Mist",
+        "canonical": "oklch(91.5% 0.031 184.1)",
+        "tonalRamp": [
+          "#060D0C",
+          "#1C2826",
+          "#354643",
+          "#4F6763",
+          "#708884",
+          "#96AAA7",
+          "#BDCDCA",
+          "#E6F1EF"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(23.3% 0.021 180.3)",
+        "tonalRamp": [
+          "#080C0B",
+          "#1F2725",
+          "#394542",
+          "#566562",
+          "#768683",
+          "#9BA8A5",
+          "#C1CCC9",
+          "#E9F0EF"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "oklch(40.7% 0.019 176.1)",
+        "tonalRamp": [
+          "#080C0B",
+          "#202725",
+          "#3B4542",
+          "#576561",
+          "#788682",
+          "#9CA8A5",
+          "#C2CBC9",
+          "#EAF0EE"
+        ]
+      },
+      "ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Ink Tertiary",
+        "canonical": "oklch(48.7% 0.017 175.1)",
+        "tonalRamp": [
+          "#080C0B",
+          "#202725",
+          "#3B4442",
+          "#586461",
+          "#798682",
+          "#9DA8A4",
+          "#C3CBC9",
+          "#EAF0EE"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "rgba(11, 122, 112, .42)",
+        "tonalRamp": [
+          "#00100D",
+          "#002D28",
+          "#024D46",
+          "#137067",
+          "#3F9288",
+          "#74B3AA",
+          "#A5D4CD",
+          "#D6F6F1"
+        ],
+        "note": "Card Stock Teal printed at partial opacity; ramp shows the stock hue."
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Soft Rule",
+        "canonical": "rgba(11, 122, 112, .2)",
+        "tonalRamp": [
+          "#00100D",
+          "#002D28",
+          "#024D46",
+          "#137067",
+          "#3F9288",
+          "#74B3AA",
+          "#A5D4CD",
+          "#D6F6F1"
+        ],
+        "note": "Card Stock Teal printed at partial opacity; ramp shows the stock hue."
+      },
+      "correction-red": {
+        "role": "tertiary",
+        "displayName": "Correction Red",
+        "canonical": "oklch(49.4% 0.158 27.0)",
+        "tonalRamp": [
+          "#1E0001",
+          "#470D0B",
+          "#73211D",
+          "#A33731",
+          "#CA5B51",
+          "#E5877D",
+          "#FDB4AA",
+          "#FFE0D9"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "oklch(20.5% 0.006 91.6)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#262523",
+          "#43423F",
+          "#62615E",
+          "#83827F",
+          "#A6A5A2",
+          "#CAC9C7",
+          "#EFEEED"
+        ]
+      },
+      "night-inner-paper": {
+        "role": "neutral",
+        "displayName": "Night Inner Paper",
+        "canonical": "oklch(23.6% 0.008 84.6)",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#262523",
+          "#43423E",
+          "#63615D",
+          "#84827D",
+          "#A7A5A1",
+          "#CAC9C6",
+          "#EFEEEC"
+        ]
+      },
+      "night-field": {
+        "role": "neutral",
+        "displayName": "Night Field",
+        "canonical": "oklch(17.8% 0.004 84.6)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#262524",
+          "#434240",
+          "#62615F",
+          "#838280",
+          "#A6A5A3",
+          "#CAC9C7",
+          "#EFEEED"
+        ]
+      },
+      "night-stock": {
+        "role": "primary",
+        "displayName": "Night Stock",
+        "canonical": "oklch(43.9% 0.073 185.8)",
+        "tonalRamp": [
+          "#000F0D",
+          "#072B28",
+          "#194B46",
+          "#2D6E67",
+          "#509088",
+          "#7FB0AA",
+          "#ACD2CD",
+          "#DBF5F1"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "oklch(94.9% 0.008 177.3)",
+        "tonalRamp": [
+          "#0A0C0B",
+          "#232625",
+          "#3F4342",
+          "#5D6361",
+          "#7E8482",
+          "#A1A6A5",
+          "#C6CAC9",
+          "#ECEFEE"
+        ]
+      },
+      "night-teal-ink": {
+        "role": "primary",
+        "displayName": "Night Teal Ink",
+        "canonical": "oklch(80.2% 0.097 182.9)",
+        "tonalRamp": [
+          "#00100D",
+          "#002D27",
+          "#004E45",
+          "#007166",
+          "#389487",
+          "#70B4A9",
+          "#A3D5CC",
+          "#D5F7F1"
+        ]
+      },
+      "night-stamp-violet": {
+        "role": "secondary",
+        "displayName": "Night Stamp Violet",
+        "canonical": "oklch(77.0% 0.126 289.8)",
+        "tonalRamp": [
+          "#0B071D",
+          "#251E44",
+          "#42386F",
+          "#61549D",
+          "#8275C2",
+          "#A49BDB",
+          "#C8C2F4",
+          "#EDEAFF"
+        ]
+      },
+      "night-correction-red": {
+        "role": "tertiary",
+        "displayName": "Night Correction Red",
+        "canonical": "oklch(77.6% 0.103 24.1)",
+        "tonalRamp": [
+          "#190404",
+          "#3C1817",
+          "#64302E",
+          "#8F4A47",
+          "#B46B67",
+          "#D0938E",
+          "#ECBBB7",
+          "#FFE5E2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles; the cover title is held smaller so the figures stay louder."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Sheet and panel headings, team names."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service names, legal subheads, patient-area list titles."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Prices, hours, dates, amounts due: the loudest type, tabular lining numerals, never wrapping."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text in the system sans at 18px for older readers on phones."
+      },
+      "label": {
+        "displayName": "Field Label",
+        "purpose": "Uppercase label naming the field or value directly beneath it."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button and action-link text in the display face."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-ink",
+        "value": "cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Button fill and colour changes over 180ms. Colour only; nothing moves. Off under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "card-turns",
+        "value": "960px",
+        "purpose": "Card stacks: cover over a horizontal perforation over the stub; footer to two columns."
+      },
+      {
+        "name": "phone",
+        "value": "760px",
+        "purpose": "Nav on its own row, short header button, one-screen card, footer one column."
+      }
+    ],
+    "darkMode": {
+      "strategy": "prefers-color-scheme",
+      "note": "Every ink is redefined on warm night paper (night-* tokens). Rules become rgba(111,211,196,.42) and .18; on-stock #EEF3F1, on-stock-muted #B9DCD6, ink2 #B7C4C0, ink3 #9AA8A4."
+    },
+    "fonts": [
+      {
+        "family": "Barlow Semi Condensed",
+        "weights": [
+          600,
+          800
+        ],
+        "source": "self-hosted woff2, latin and latin-ext subsets, served at /fonts/bsc-*.woff2",
+        "display": "swap"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Stock-filled die-cut button for the one main action (request, continue, send).",
+      "html": "<button class=\"ds-btn ds-btn-pri\">Pedir marcação</button>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:10px 22px;border-radius:var(--cut);border:2px solid var(--stock);background:transparent;color:var(--teal-ink);font:600 20px/1 var(--display);letter-spacing:.02em;cursor:pointer;transition:background-color .18s cubic-bezier(.2,.7,.2,1),color .18s;}.ds-btn:hover{background:var(--a-soft2);color:var(--ink);}.ds-btn:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;}.ds-btn-pri{background:var(--stock);color:var(--on-stock);}.ds-btn-pri:hover{background:var(--stock-deep);color:var(--on-stock);}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Default button: stock border, teal-ink text, flat tint on hover.",
+      "html": "<button class=\"ds-btn\">Fatura (PDF)</button>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:10px 22px;border-radius:var(--cut);border:2px solid var(--stock);background:transparent;color:var(--teal-ink);font:600 20px/1 var(--display);letter-spacing:.02em;cursor:pointer;transition:background-color .18s cubic-bezier(.2,.7,.2,1),color .18s;}.ds-btn:hover{background:var(--a-soft2);color:var(--ink);}.ds-btn:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary account actions (password, sign out).",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">Sair</button>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:10px 22px;border-radius:var(--cut);border:2px solid var(--stock);background:transparent;color:var(--teal-ink);font:600 20px/1 var(--display);letter-spacing:.02em;cursor:pointer;transition:background-color .18s cubic-bezier(.2,.7,.2,1),color .18s;}.ds-btn:hover{background:var(--a-soft2);color:var(--ink);}.ds-btn:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;}.ds-btn-ghost{border-color:var(--rule-soft);color:var(--ink2);}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "White blank with a ruled border and violet focus outline; the date field prints its value in date-stamp ink.",
+      "html": "<label class=\"ds-lbl\" for=\"ds-n\">Nome</label><input id=\"ds-n\" class=\"ds-input\" placeholder=\"Nome completo\"><label class=\"ds-lbl\" for=\"ds-d\" style=\"margin-top:16px\">Dia que prefere</label><input id=\"ds-d\" class=\"ds-input ds-date\" type=\"date\" value=\"2026-11-27\">",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-lbl{display:block;font:600 16px/1.3 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--teal-ink);margin-bottom:8px;}.ds-input{width:100%;font:18px/1.6 var(--text);color:var(--ink);background:var(--field);border:2px solid var(--rule);border-radius:var(--cut);padding:12px 14px;min-height:54px;}.ds-input:focus{outline:3px solid var(--stamp);outline-offset:1px;border-color:var(--stock);}.ds-input::placeholder{color:var(--ink3);}.ds-date{font:800 22px/1.2 var(--display);font-variant-numeric:tabular-nums;color:var(--stamp);}"
+    },
+    {
+      "name": "Masthead Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Paper masthead over a 3px stock rule; uppercase display links, current page underlined in teal ink.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Início</a><a href=\"#\">Serviços e preços</a><a href=\"#\">Equipa</a></nav>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-nav{display:flex;gap:4px;background:var(--paper);border-bottom:3px solid var(--stock);padding:0 8px;}.ds-nav a{color:var(--ink2);text-decoration:none;padding:10px 12px;min-height:48px;display:inline-flex;align-items:center;font:600 18px/1 var(--display);text-transform:uppercase;letter-spacing:.06em;}.ds-nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:6px;}.ds-nav a:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;}.ds-nav a[aria-current=page]{color:var(--teal-ink);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;}"
+    },
+    {
+      "name": "Choice Box",
+      "kind": "chip",
+      "refersTo": "choice-box",
+      "description": "Radio or checkbox as a die-cut box; checked turns the border to stock and the text to teal ink.",
+      "html": "<div class=\"ds-boxes\"><label class=\"ds-box\"><input type=\"radio\" name=\"p\">Manhã</label><label class=\"ds-box\"><input type=\"radio\" name=\"p\">Tarde</label><label class=\"ds-box\"><input type=\"radio\" name=\"p\" checked>Tanto faz</label></div>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-boxes{display:flex;gap:8px;flex-wrap:wrap;font:600 18px/1.6 var(--text);color:var(--ink);}.ds-box{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:8px 14px;border:2px solid var(--rule-soft);border-radius:var(--cut);cursor:pointer;background:var(--field);}.ds-box:hover{border-color:var(--rule);}.ds-box:has(input:checked){border-color:var(--stock);color:var(--teal-ink);}.ds-box:has(input:focus-visible){outline:3px solid var(--stamp);outline-offset:2px;}.ds-box input{width:22px;height:22px;margin:0;accent-color:var(--stock);}"
+    },
+    {
+      "name": "Price Line",
+      "kind": "custom",
+      "refersTo": "price-line",
+      "description": "Signature row of the request stub: radio, service name, dotted leader, and the price as the loudest figure.",
+      "html": "<div class=\"ds-lines\"><label class=\"ds-line\"><input type=\"radio\" name=\"s\" checked><span class=\"ds-what\"><b>Avaliação inicial</b><small>Primeira vez</small></span><span class=\"ds-leader\"></span><span class=\"ds-fig\">30,00 €</span></label><label class=\"ds-line\"><input type=\"radio\" name=\"s\"><span class=\"ds-what\"><b>Sessão</b><small>Já é utente</small></span><span class=\"ds-leader\"></span><span class=\"ds-fig\">20,00 €</span></label></div>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-lines{background:var(--paper2);padding:8px 20px;font:18px/1.6 var(--text);color:var(--ink);}.ds-line{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule);cursor:pointer;min-height:56px;}.ds-line:first-child{border-top:1px solid var(--rule);}.ds-line input{align-self:center;width:22px;height:22px;margin:0;accent-color:var(--stock);}.ds-what b{display:block;font-size:19px;line-height:1.25;}.ds-what small{display:block;color:var(--ink3);font-size:15px;}.ds-leader{flex:1;border-bottom:2px dotted var(--rule);transform:translateY(-6px);min-width:12px;}.ds-fig{font:800 48px/1 var(--display);font-variant-numeric:tabular-nums lining-nums;white-space:nowrap;}.ds-line:has(input:checked) b,.ds-line:has(input:checked) .ds-fig{color:var(--teal-ink);}.ds-line:has(input:focus-visible){outline:3px solid var(--stamp);outline-offset:3px;}"
+    },
+    {
+      "name": "Stamp and Tag",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "Date-stamp violet rubber stamp (one per page, rotated) and the upright status tag.",
+      "html": "<p class=\"ds-stamp\">Abertura em breve</p> <span class=\"ds-tag\">Pedido de mudança enviado</span>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-stamp{display:inline-block;font:800 17px/1 var(--display);text-transform:uppercase;letter-spacing:.1em;color:var(--stamp);border:3px solid var(--stamp);border-radius:4px;padding:7px 10px 6px;transform:rotate(-5deg);margin:12px 16px;}.ds-tag{display:inline-block;font:800 14px/1 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--stamp);border:2px solid var(--stamp);border-radius:4px;padding:6px 8px 5px;}"
+    },
+    {
+      "name": "Printed Panel with Dated List",
+      "kind": "card",
+      "refersTo": "printed-panel",
+      "description": "Inner-paper panel with a ruled border; patient-area rows carry the date in violet figures and the amount due as a figure.",
+      "html": "<section class=\"ds-card\"><h2>Próximas sessões</h2><div class=\"ds-row\"><p class=\"ds-t ds-dt\">terça, 24 de novembro · 08:00</p><p class=\"ds-s\">Sessão · Ana</p></div><div class=\"ds-due\"><span>Por pagar</span><b>25,00 €</b></div></section>",
+      "css": ":host{--paper:#F3F1EC;--paper2:#FAF9F6;--field:#FFFFFF;--stock:#0B7A70;--stock-deep:#075A53;--on-stock:#F3F1EC;--ink:#12211E;--ink2:#3F4D49;--ink3:#56635F;--teal-ink:#08655D;--rule:rgba(11,122,112,.42);--rule-soft:rgba(11,122,112,.2);--stamp:#4A37A8;--a-soft2:rgba(11,122,112,.14);--cut:6px;--display:\"Barlow Semi Condensed\",\"Arial Narrow\",system-ui,sans-serif;--text:-apple-system,BlinkMacSystemFont,\"Segoe UI\",system-ui,sans-serif;}.ds-card{background:var(--paper2);border:2px solid var(--rule);border-radius:var(--cut);padding:clamp(22px,3.4vw,40px);font:18px/1.6 var(--text);color:var(--ink);}.ds-card h2{font:800 30px/1.04 var(--display);letter-spacing:-.01em;margin:0 0 16px;}.ds-row{padding:14px 0;border-bottom:1px solid var(--rule);}.ds-t{font:800 24px/1.15 var(--display);font-variant-numeric:tabular-nums;margin:0;}.ds-dt{color:var(--stamp);}.ds-s{color:var(--ink2);margin:2px 0 0;font-size:16px;}.ds-due{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-top:3px solid var(--stock);border-bottom:1px solid var(--rule);margin-top:18px;}.ds-due span{font:600 16px/1 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--teal-ink);}.ds-due b{font:800 40px/1 var(--display);font-variant-numeric:tabular-nums;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Appointment Card",
+    "overview": "The site is set like the small printed card a physiotherapy patient keeps in the wallet. Teal card stock is the cover (the home page's first panel, the footer, the single-card \"being prepared\" page); the brand's paper is the printed inside, where everything a patient fills in or reads sits on ruled lines. One perforation with punched notches tears the cover from the request stub. A second ink, date-stamp violet, is pressed onto dates and onto one rubber stamp per page. Nothing is lit, blurred or lifted: every surface is a flat ink on stock or paper.\n\nDensity is that of a printed form, not a brochure: rules every row, small-caps field labels, dotted leaders running from a service to its price, and figures (prices, opening hours, dates, amounts due) set as the loudest type on the page, louder than most headings. Reading text is the system sans at 18px for older patients on phones; the condensed display face carries names, headings, labels, buttons and every number.\n\nDark mode keeps the card metaphor on a warm near-black paper (night paper) with a deeper stock, a pale teal ink and a light violet stamp. The world rejects the wellness template: no stock smiles, no blurred blobs, no frosted header, no soft rounded cards.",
+    "keyCharacteristics": [
+      "Two materials only: teal card stock and brand paper (warm near-black at night).",
+      "Flat inks, no gradients, blur, glow or soft shadows.",
+      "Printed form grammar: ruled rows, dotted leaders, small-caps labels, dashed tear lines.",
+      "Figures in Barlow Semi Condensed 800 with tabular lining numerals, larger than the text around them.",
+      "Date-stamp violet for dates, the date field, focus and the one stamp per page.",
+      "6px die-cut corners on every box; 4px on rubber stamps.",
+      "No JavaScript, no outside fonts or images; everything is CSS, inline SVG or a self-hosted file."
+    ],
+    "rules": [
+      {
+        "name": "The Two Inks Rule",
+        "body": "Teal and near-black do all the work; violet appears only on dates, the date field, focus, selection, and stamps. If violet is on something that is not a date or a stamp, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Stamp Rule",
+        "body": "At most one rotated rubber stamp per page. Status tags in a list are small upright stamps and do not count against it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat Ink Rule",
+        "body": "No gradients, blur, glow, translucency over content or soft shadows anywhere. Tints exist only as flat fills (the 8% to 14% teal behind a checked option or an outline button's hover, the 7% red behind errors).",
+        "section": "colors"
+      },
+      {
+        "name": "The Loud Figures Rule",
+        "body": "A price, time, date or amount is always set in the display face at 800 with tabular lining numerals, and always larger than the label or name it belongs to. On the request stub the price (48px) is bigger than the stub's heading (30px).",
+        "section": "typography"
+      },
+      {
+        "name": "The Field Label Rule",
+        "body": "Uppercase small labels name a field or a value directly beneath them (a form field, a phone number, a job title under a name, the amount due). They are never a decorative line above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Depth Rule",
+        "body": "If a surface needs separating, give it a rule or put it on stock. Never a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put every price, hour, date and amount in Barlow Semi Condensed 800 with tabular lining numerals, larger than its label.",
+      "Do separate rows with 1px Rule lines and open each sheet with a 3px stock rule.",
+      "Do run a dotted leader from a service name to its price.",
+      "Do use 6px corners on every box and 4px on stamps and tags.",
+      "Do print dates and the date field's value in date-stamp violet.",
+      "Do keep body text at 18px in the system sans, and targets at 44px or more.",
+      "Do redefine every ink for dark mode on warm night paper rather than inverting."
+    ],
+    "donts": [
+      "Don't use gradients, blur, glow, frosted surfaces or box shadows.",
+      "Don't use violet for anything other than dates, the date field, focus, selection and stamps, and don't print more than one rotated stamp per page.",
+      "Don't set small teal text in Card Stock Teal on paper; use Teal Ink.",
+      "Don't put uppercase labels above headings as decoration; a label names the field or value under it.",
+      "Don't add photos, stock imagery, testimonials or decorative illustration; the only image is the brand mark.",
+      "Don't load fonts, scripts or images from other servers."
+    ]
+  }
+}

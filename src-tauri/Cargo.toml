@@ -1,0 +1,47 @@
+[package]
+name = "physiopulse"
+version = "0.15.0"
+description = "PhysioPulse — clinic management for Mac and Windows, and the staff iPhone app"
+edition = "2021"
+rust-version = "1.85"
+
+[lib]
+name = "physiopulse_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+cmake = "0.1"  # the on-device AI module (native/, built by build.rs)
+
+[features]
+# On-device chat and speech (native/): always on macOS once tools/local-ai/setup.sh has run; opt-in elsewhere.
+local-ai = []
+
+[dependencies]
+tauri = { version = "2", features = ["macos-private-api"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+gethostname = "0.5"
+getrandom = "0.2"  # the device key (phase 3)
+tokio = { version = "1", features = ["time"] }
+
+# Desktop only: the window material, opening reminder links, one window per computer, in-app updates.
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+window-vibrancy = "0.6"
+open = "5"
+tauri-plugin-single-instance = "~2.5"
+# In-app updates from GitHub Releases, checked against the owner's signing key (src/updates.rs, claude/RELEASING.md).
+tauri-plugin-updater = "~2.14"  # 2.14 has requireSignedVersion (tauri.conf.json)
+
+# The staff iPhone app (phase 5): the session token in the keychain behind Face ID.
+[target.'cfg(target_os = "ios")'.dependencies]
+security-framework = "3"
+core-foundation = "0.10"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

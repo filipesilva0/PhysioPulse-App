@@ -1,0 +1,110 @@
+<title>PhysioPulse Brand</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a brand sheet — the mark large, the three colourways side by side, then sizes, colours and type. */
+:root {
+  --paper: #F3F1EC; --sheet: #FBFAF7; --ink: #1C2321; --sub: #59605D; --line: #DCD8D0; --teal: #0B7A70;
+  --display: "Manrope", "Avenir Next", system-ui, sans-serif; --body: "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #151917; --sheet: #1C211F; --ink: #ECEDE9; --sub: #A3AAA6; --line: #2E3532; --teal: #3DB3A5; color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #151917; --sheet: #1C211F; --ink: #ECEDE9; --sub: #A3AAA6; --line: #2E3532; --teal: #3DB3A5; color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.55 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; display: grid; gap: 64px; }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
+h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--sub); font-weight: 700; margin-bottom: 18px; }
+p { margin: 0; color: var(--sub); max-width: 60ch; }
+.hero { display: grid; gap: 22px; }
+.hero .mk { width: 100%; max-width: 760px; height: auto; color: var(--teal); }
+.hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+.hero p { font-size: 18px; }
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.way { display: grid; gap: 14px; align-content: start; }
+.way-art { border-radius: 22px; padding: 28px; display: grid; gap: 26px; justify-items: center; border: 1px solid var(--line); }
+.ic { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,.16); }
+.lock { display: flex; align-items: center; gap: 10px; }
+.lock .mk { width: 64px; height: auto; }
+.lock span { font: 800 26px/1 var(--display); letter-spacing: -.03em; }
+.way-txt h3 { font-size: 19px; display: flex; gap: 10px; align-items: center; }
+.tag { font: 700 12px/1 var(--body); padding: 5px 8px; border-radius: 6px; background: var(--ink); color: var(--paper); }
+.way-txt p { margin-top: 4px; font-size: 15px; }
+.sizes { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 22px; }
+.sizes figure { margin: 0; display: grid; gap: 8px; justify-items: center; }
+.sizes .sz svg { width: 100%; height: 100%; border-radius: 22%; display: block; }
+.sizes figcaption { font-size: 12px; color: var(--sub); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+.sw { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+.sw div { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--sheet); }
+.sw i { display: block; height: 64px; }
+.sw b { display: block; padding: 8px 10px 0; font-size: 14px; font-weight: 600; }
+.sw code { display: block; padding: 0 10px 10px; font-size: 12px; color: var(--sub); }
+.type .big { font: 800 44px/1 var(--display); letter-spacing: -.035em; }
+.type .med { font: 500 18px/1.4 var(--body); margin-top: 12px; color: var(--ink); }
+.type small { display: block; margin-top: 10px; color: var(--sub); font-size: 13px; }
+.rule { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+.space { padding: 26px; border: 1px dashed var(--sub); border-radius: 12px; color: var(--ink); }
+.space .mk { width: 180px; height: auto; display: block; }
+@media (max-width: 560px) { .rule { grid-template-columns: 1fr; } }
+</style>
+<main class="wrap">
+  <section class="hero">
+    <svg class="mk " viewBox="20 90 600 270" aria-hidden="true"><path d="M40 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H600" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h1>PhysioPulse</h1>
+    <p>Uma linha de pulso que, no batimento, sobe para as pontas dos dedos de uma mão aberta. Um traço só, do princípio ao fim.</p>
+  </section>
+  <section>
+    <h2>Três combinações</h2>
+    <div class="ways">
+  <article class="way">
+    <div class="way-art" style="background:var(--teal)">
+      <svg class="ic" role="img" aria-label="Ícone Clínica" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="lock" style="color:#F3F1EC"><svg class="mk small" viewBox="20 90 600 270" aria-hidden="true"><path d="M40 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H600" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PhysioPulse</span></div>
+    </div>
+    <div class="way-txt"><h3><span class="tag">A</span> Clínica</h3><p>Papel sobre o verde-azulado da aplicação. Forte no ecrã principal do iPhone.</p></div>
+  </article>
+
+  <article class="way">
+    <div class="way-art" style="background:var(--sheet)">
+      <svg class="ic" role="img" aria-label="Ícone Papel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#F3F1EC"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#0B7A70" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="lock" style="color:var(--teal)"><svg class="mk small" viewBox="20 90 600 270" aria-hidden="true"><path d="M40 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H600" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PhysioPulse</span></div>
+    </div>
+    <div class="way-txt"><h3><span class="tag">B</span> Papel</h3><p>Verde-azulado sobre papel. Calmo, bom para o site e documentos.</p></div>
+  </article>
+
+  <article class="way">
+    <div class="way-art" style="background:var(--sheet)">
+      <svg class="ic" role="img" aria-label="Ícone Tinta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#F3F1EC"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#1C2321" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="lock" style="color:var(--ink)"><svg class="mk small" viewBox="20 90 600 270" aria-hidden="true"><path d="M40 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H600" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PhysioPulse</span></div>
+    </div>
+    <div class="way-txt"><h3><span class="tag">C</span> Tinta</h3><p>Uma só cor escura. Para impressão a preto, carimbos e faturas.</p></div>
+  </article></div>
+  </section>
+  <section>
+    <h2>Ícone em vários tamanhos</h2>
+    <div class="sizes"><figure><div class="sz" style="width:180px;height:180px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">180</figcaption></figure><figure><div class="sz" style="width:96px;height:96px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">96</figcaption></figure><figure><div class="sz" style="width:60px;height:60px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">60</figcaption></figure><figure><div class="sz" style="width:40px;height:40px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">40</figcaption></figure><figure><div class="sz" style="width:29px;height:29px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">29</figcaption></figure><figure><div class="sz" style="width:20px;height:20px"><svg class="ic" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><rect width="1024" height="1024" fill="#0B7A70"/><path transform="translate(-219.4 -12.4) scale(2.3)" d="M-120 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H780" fill="none" stroke="#F3F1EC" stroke-width="20.00" stroke-linecap="round" stroke-linejoin="round"/></svg></div><figcaption class="num">20</figcaption></figure></div>
+  </section>
+  <section class="cols">
+    <div>
+      <h2>Cores</h2>
+      <div class="sw">
+        <div><i style="background:#0B7A70"></i><b>Clínica</b><code>#0B7A70</code></div>
+        <div><i style="background:#1C2321"></i><b>Tinta</b><code>#1C2321</code></div>
+        <div><i style="background:#F3F1EC"></i><b>Papel</b><code>#F3F1EC</code></div>
+      </div>
+    </div>
+    <div class="type">
+      <h2>Letra</h2>
+      <div class="big">PhysioPulse</div>
+      <div class="med">Sessão de fisioterapia · 45 min · 20,00 €</div>
+      <small>Manrope ExtraBold no nome, Inter no texto. Ambas gratuitas (Google Fonts).</small>
+    </div>
+  </section>
+  <section>
+    <h2>Espaço à volta</h2>
+    <div class="rule">
+      <div class="space"><svg class="mk " viewBox="20 90 600 270" aria-hidden="true"><path d="M40 300 H150 C165 300 168 262 182 262 C196 262 200 338 212 338 C224 338 230.0 300 230.0 246 L230.0 178 A20.0 20.0 0 0 1 270.0 178 L270.0 236 A3.0 3.0 0 0 0 276.0 236 L276.0 132 A20.0 20.0 0 0 1 316.0 132 L316.0 236 A3.0 3.0 0 0 0 322.0 236 L322.0 150 A20.0 20.0 0 0 1 362.0 150 L362.0 236 A2.0 2.0 0 0 0 366.0 236 L366.0 196 A20.0 20.0 0 0 1 406.0 196 L406.0 250 C406.0 300 412.0 326 426.0 326 C440.0 326 440.0 274 454.0 274 C468.0 274 468.0 300 486.0 300 H600" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p>Deixe à volta da marca pelo menos a altura do dedo mais alto. Mínimo: 24 px de largura no ecrã, 12 mm impresso. Abaixo disso use só o ícone.</p>
+    </div>
+  </section>
+</main>

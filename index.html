@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>PhysioPulse</title>
+  </head>
+  <body>
+    <!-- Shown until the app starts; React replaces it. If it stays, the app's code didn't run. -->
+    <div id="root"><p id="boot-msg" style="font:15px -apple-system,system-ui,sans-serif;color:#888;text-align:center;margin-top:45vh">A abrir o PhysioPulse…</p></div>
+    <!-- Any error while starting is written on screen (a blank or black screen says nothing). -->
+    <script>
+      (function () {
+        function show(m) {
+          var b = document.getElementById("boot-err");
+          if (!b) { b = document.createElement("pre"); b.id = "boot-err";
+            b.style.cssText = "position:fixed;left:8px;right:8px;bottom:8px;max-height:45vh;overflow:auto;z-index:99999;margin:0;padding:10px;border-radius:10px;background:#300;color:#fdd;font:11px ui-monospace,monospace;white-space:pre-wrap";
+            document.body.appendChild(b); }
+          b.textContent += m + "\n";
+        }
+        window.addEventListener("error", function (e) { show("Erro: " + (e.message || e) + (e.filename ? "\n  " + e.filename + ":" + e.lineno : "")); });
+        window.addEventListener("unhandledrejection", function (e) { var r = e.reason; show("Erro: " + (r && (r.stack || r.message) || r)); });
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

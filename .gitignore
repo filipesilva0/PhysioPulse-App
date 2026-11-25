@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-preview
+src-tauri/target
+src-tauri/gen
+server/target
+.env
+server/portal/target
+src-tauri/native/vendor
+src-tauri/native/dist
+# Releases (claude/RELEASING.md): the repository is public. Never commit keys or local outputs.
+*.key
+*.key.pub
+.env.*
+!.env.example
+ci-release.conf.json
+Claude outputs/
+server/dist/
+clinica-preview.html
+physiopulse-preview.html

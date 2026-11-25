@@ -1,0 +1,28 @@
+[package]
+name = "physiopulse-site"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.85"
+description = "PhysioPulse public website (phase 4a): clinic pages and appointment requests. Signs in to the database as physiopulse_portal, which sees only the portal views."
+
+[dependencies]
+axum = { version = "0.7", features = ["form"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres", "time", "json", "derive", "uuid"] }
+time = { version = "0.3", features = ["serde", "macros", "formatting", "parsing"] }
+tower-http = { version = "0.6", features = ["limit", "set-header"] }
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+uuid = "1"
+rand = "0.8"
+# Phase 4b: patient accounts.
+argon2 = "0.5"
+chacha20poly1305 = "0.10"
+totp-rs = { version = "5", features = ["otpauth", "gen_secret"] }
+qrcode = { version = "0.14", default-features = false, features = ["svg"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }

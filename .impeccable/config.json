@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/styles/app.css"
+        ],
+        "createdAt": "2026-11-23T17:26:53.220Z",
+        "reason": "Claude triage: calendar event blocks (.ev, .gc) use a 3px therapist-colour stripe, a calendar convention sanctioned in claude/DESIGN.md (therapists keep their own colours on the schedule); predates this session"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "server/portal/static/site.css"
+        ],
+        "createdAt": "2026-11-23T19:50:51.834Z",
+        "reason": "Claude triage: on phones the stub's left edge completes its full 2px border after the card stacks (top edge is the perforation); not a one-sided accent bar"
+      }
+    ]
+  }
+}

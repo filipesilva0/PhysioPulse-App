@@ -1,0 +1,232 @@
+name: Release
+
+# Builds PhysioPulse for the Mac (Apple silicon) and Windows, signs the update files with the owner's
+# updater key, and publishes a GitHub Release with latest.json, the manifest every installed copy reads
+# (src-tauri/tauri.conf.json › plugins.updater). Full steps and rules: claude/RELEASING.md.
+#
+# The copy to edit is tools/release/release.yml; tools/release/publish.ps1 copies it to .github/workflows/.
+#
+# Start it by pushing a tag vX.Y.Z whose X.Y.Z matches the version in package.json, src-tauri/Cargo.toml and
+# src-tauri/tauri.conf.json (tools/release/bump.mjs sets all three). Or: Actions › Release › Run workflow
+# with an empty version for a test build (files only under the run's Artifacts, nothing published).
+#
+# Repository secrets (Settings › Secrets and variables › Actions):
+#   TAURI_SIGNING_PRIVATE_KEY           the updater private key (the text of the .key file)
+#   TAURI_SIGNING_PRIVATE_KEY_PASSWORD  its password
+# The public half is in src-tauri/tauri.conf.json. Without the private key nothing can be released.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Leave empty for a test build. To release, push a tag instead (see claude/RELEASING.md).'
+        required: false
+        default: ''
+
+permissions:
+  contents: write   # creating the GitHub Release
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.v.outputs.release }}
+      version: ${{ steps.v.outputs.version }}
+      tag: ${{ steps.v.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: v
+        shell: bash
+        env:
+          REF: ${{ github.ref }}
+          REF_NAME: ${{ github.ref_name }}
+          HAS_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY != '' }}
+        run: |
+          set -euo pipefail
+          pkg=$(node -p "require('./package.json').version")
+          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          cargo=$(grep -m1 '^version' src-tauri/Cargo.toml | cut -d'"' -f2)
+          echo "package.json $pkg · tauri.conf.json $conf · Cargo.toml $cargo"
+          if [[ "$pkg" != "$conf" || "$pkg" != "$cargo" ]]; then
+            echo "::error::The three version numbers differ. Run: node tools/release/bump.mjs <version>"; exit 1
+          fi
+          if grep -q REPLACE_WITH_UPDATER_PUBLIC_KEY src-tauri/tauri.conf.json; then
+            echo "::warning::No updater public key in tauri.conf.json yet (tools/release/new-signing-key.ps1)."
+          fi
+          if [[ "$REF" != refs/tags/v* ]]; then
+            echo "release=false" >> "$GITHUB_OUTPUT"; echo "version=$pkg" >> "$GITHUB_OUTPUT"
+            echo "Test build of $pkg: nothing will be published."; exit 0
+          fi
+          ver="${REF_NAME#v}"
+          [[ "$ver" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::Tag $REF_NAME is not vX.Y.Z"; exit 1; }
+          [[ "$ver" == "$pkg" ]] || { echo "::error::Tag $REF_NAME but the app says $pkg. Bump first, then tag."; exit 1; }
+          grep -q REPLACE_WITH_UPDATER_PUBLIC_KEY src-tauri/tauri.conf.json && { echo "::error::Put the updater public key in tauri.conf.json before releasing."; exit 1; }
+          [[ "$HAS_KEY" == "true" ]] || { echo "::error title=Missing secret::Add TAURI_SIGNING_PRIVATE_KEY (Settings › Secrets and variables › Actions)."; exit 1; }
+          [[ -f "claude/releases/v$ver.md" ]] || { echo "::error::Write claude/releases/v$ver.md (what changed) before releasing."; exit 1; }
+          echo "release=true" >> "$GITHUB_OUTPUT"; echo "version=$ver" >> "$GITHUB_OUTPUT"; echo "tag=v$ver" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: macos
+            os: macos-14            # Apple silicon (the MacBook Air M2)
+            target: aarch64-apple-darwin
+          - name: windows
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+    name: build (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    env:
+      RELEASE: ${{ needs.prepare.outputs.release }}
+      VERSION: ${{ needs.prepare.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          key: ${{ matrix.name }}
+
+      - run: npm ci
+
+      # The Mac build carries the on-device AI module (claude/LOCAL_AI.md). Only the build sources are
+      # fetched here; the models stay on each Mac (they're downloaded there by the same script).
+      - name: On-device AI sources (Mac)
+        if: matrix.name == 'macos'
+        shell: bash
+        run: |
+          command -v cmake >/dev/null || brew install cmake
+          SKIP_MODELS=1 bash tools/local-ai/setup.sh
+
+      # Release builds make the signed update files. The Mac app is ad-hoc signed (no Apple Developer ID yet):
+      # the updater's own signature is what proves an update is genuine.
+      - name: Release config
+        shell: bash
+        run: |
+          if [[ "$RELEASE" == "true" ]]; then
+            echo '{"bundle":{"createUpdaterArtifacts":true,"macOS":{"signingIdentity":"-"}}}' > ci-release.conf.json
+          else
+            echo '{"bundle":{"macOS":{"signingIdentity":"-"}}}' > ci-release.conf.json
+          fi
+
+      - name: Build
+        shell: bash
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ needs.prepare.outputs.release == 'true' && secrets.TAURI_SIGNING_PRIVATE_KEY || '' }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ "${{ matrix.name }}" == "macos" ]]; then
+            extra=(--config src-tauri/tauri.local-ai.conf.json --bundles app,dmg)
+          else
+            extra=(--bundles nsis)
+          fi
+          npx tauri build --target ${{ matrix.target }} "${extra[@]}" --config ci-release.conf.json
+
+      # Stable names, and a signature bound to this version (requireSignedVersion in tauri.conf.json: a
+      # tampered latest.json can't offer an older, validly signed package under a newer number).
+      - name: Collect and sign
+        shell: bash
+        env:
+          B: src-tauri/target/${{ matrix.target }}/release/bundle
+          TAURI_SIGNING_PRIVATE_KEY: ${{ needs.prepare.outputs.release == 'true' && secrets.TAURI_SIGNING_PRIVATE_KEY || '' }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          mkdir -p out
+          one() { local f=( $1 ); [[ ${#f[@]} -ge 1 ]] || { echo "::error::No file matches $1"; exit 1; }; cp "${f[0]}" "out/$2"; }
+          if [[ "${{ matrix.name }}" == "macos" ]]; then
+            one "$B/dmg/*.dmg" PhysioPulse-mac-apple-silicon.dmg
+            [[ "$RELEASE" == "true" ]] && one "$B/macos/*.app.tar.gz" PhysioPulse-mac-apple-silicon.app.tar.gz
+          else
+            one "$B/nsis/*-setup.exe" PhysioPulse-windows-x64-setup.exe
+          fi
+          if [[ "$RELEASE" == "true" ]]; then
+            for f in out/*.app.tar.gz out/*-setup.exe; do
+              npx tauri signer sign -k "$TAURI_SIGNING_PRIVATE_KEY" --app-version "$VERSION" "$f"
+              [[ -s "$f.sig" ]] || { echo "::error::$f has no updater signature"; exit 1; }
+            done
+          fi
+          ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PhysioPulse-${{ matrix.name }}
+          path: out/*
+          if-no-files-found: error
+
+  # Uploads everything to a draft release, writes latest.json last, and only then publishes, so an
+  # installed copy never sees a release without its manifest.
+  publish:
+    needs: [prepare, build]
+    if: needs.prepare.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+      VERSION: ${{ needs.prepare.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: claude/releases
+          path: src
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+
+      - name: Write latest.json
+        shell: python
+        run: |
+          import json, os, datetime
+          tag, ver, repo = os.environ["TAG"], os.environ["VERSION"], os.environ["GH_REPO"]
+          base = f"https://github.com/{repo}/releases/download/{tag}/"
+          def entry(name):
+              return {"signature": open(f"out/{name}.sig").read().strip(), "url": base + name}
+          mac = entry("PhysioPulse-mac-apple-silicon.app.tar.gz")
+          win = entry("PhysioPulse-windows-x64-setup.exe")
+          # The first paragraph of claude/releases/vX.Y.Z.md is what the app shows next to "Update".
+          text = open(f"src/claude/releases/{tag}.md", encoding="utf-8").read().replace("\r\n", "\n")
+          paras = [p.strip() for p in text.split("\n\n") if p.strip() and not p.strip().startswith("#")]
+          notes = paras[0] if paras else f"PhysioPulse {ver}"
+          manifest = {
+              "version": ver,
+              "notes": notes,
+              "pub_date": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "platforms": {
+                  "darwin-aarch64": mac, "darwin-aarch64-app": mac,
+                  "windows-x86_64": win, "windows-x86_64-nsis": win,
+              },
+          }
+          json.dump(manifest, open("out/latest.json", "w"), indent=2, ensure_ascii=False)
+          print(json.dumps(manifest, indent=2, ensure_ascii=False))
+
+      - name: Publish release
+        shell: bash
+        run: |
+          set -euo pipefail
+          ls -la out
+          gh release create "$TAG" out/* --target "${{ github.sha }}" --draft --title "PhysioPulse $VERSION" --notes-file "src/claude/releases/$TAG.md"
+          gh release edit "$TAG" --draft=false --latest
+          echo "Published https://github.com/$GH_REPO/releases/tag/$TAG" >> "$GITHUB_STEP_SUMMARY"

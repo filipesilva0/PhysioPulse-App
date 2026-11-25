@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Merged into the iPhone app's Info.plist by Tauri (PhysioPulse plan, phase 5). If a Tauri version doesn't merge it,
+     add these keys in Xcode (target PhysioPulse_iOS › Info). -->
+<plist version="1.0">
+<dict>
+  <key>NSFaceIDUsageDescription</key>
+  <string>O PhysioPulse pede o Face ID sempre que volta a abrir, para proteger as fichas dos utentes.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>O PhysioPulse grava a sessão de tratamento, quando o utente aceita, para a IA local da clínica escrever o rascunho da nota.</string>
+  <!-- The clinic server (and, while developing, the Mac) is on the local network. Without this iOS blocks it. -->
+  <key>NSLocalNetworkUsageDescription</key>
+  <string>O PhysioPulse liga-se ao servidor da clínica na rede local.</string>
+  <!-- Recording with the screen locked (the risk to test in the first build; a free Apple account may refuse it). -->
+  <key>UIBackgroundModes</key>
+  <array>
+    <string>audio</string>
+  </array>
+  <key>UIRequiresFullScreen</key>
+  <true/>
+  <key>UISupportedInterfaceOrientations</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+  </array>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>pt-PT</string>
+  <key>CFBundleLocalizations</key>
+  <array>
+    <string>pt-PT</string>
+    <string>en</string>
+  </array>
+</dict>
+</plist>
