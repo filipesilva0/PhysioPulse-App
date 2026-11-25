@@ -75,7 +75,7 @@ Owner:
 
 | File | What |
 | --- | --- |
-| `tools/release/release.yml` | The GitHub Actions workflow: build (macOS 14 arm64 + Windows), sign, publish. **Edit this copy**: `publish.ps1` copies it to `.github/workflows/release.yml` (Claude's folder tools can't write inside `.github`). |
+| `tools/release/release.yml` | The GitHub Actions workflow: build (newest macOS on Apple silicon + Windows), sign, publish. **Edit this copy**: `publish.ps1` copies it to `.github/workflows/release.yml` (Claude's folder tools can't write inside `.github`). |
 | `tools/release/publish.ps1` | Bump, secret check, commit, tag, push |
 | `tools/release/bump.mjs` | `major` / `minor` / `patch` / `X.Y.Z` in package.json, package-lock.json, Cargo.toml, Cargo.lock, tauri.conf.json |
 | `tools/release/new-signing-key.ps1` | Once: the updater key pair |

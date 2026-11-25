@@ -78,7 +78,7 @@ jobs:
       matrix:
         include:
           - name: macos
-            os: macos-14            # Apple silicon (the MacBook Air M2)
+            os: macos-latest        # Apple silicon (the MacBook Air M2). Not a fixed version: GitHub retires old macOS images (macos-14 was gone by 25 Nov 2026).
             target: aarch64-apple-darwin
           - name: windows
             os: windows-latest
